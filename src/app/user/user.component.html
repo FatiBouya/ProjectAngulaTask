@@ -1,0 +1,10 @@
+<p> <b>Welcome to user page</b></p>
+
+<span routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+    <button type="button" class="btn btn-info" (click)="goToHome()">Home</button> 
+    <button type="button" class="btn btn-primary"[routerLink]="['/tasks','','edit']">Edit</button>
+
+</span>
+<!--{path:'task/:id/edit',component:TaskEditComponent}-->
+
+

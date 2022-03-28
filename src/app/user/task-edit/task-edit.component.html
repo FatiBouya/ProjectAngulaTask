@@ -1,0 +1,66 @@
+<p>task-edit works!</p>
+<div class="card">
+    <div class="card-header text-white bg-info">
+       Create Task
+      </div>
+      <div class="card-body">
+         <form novalidate [formGroup]="taskForm" (ngSubmit)='saveTask()'> 
+            <div class="form-group row mb-2">
+                <label for="taskNameId" class="col-sm-2 col-form-label">Name:</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="" placeholder="Name(obligatoire)" formControlName="taskName" id="">
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <label for="startingDateId" class="col-sm-2 col-form-label"> Starting Date:</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="" placeholder="StartingDate(obligatoire)"  formControlName="startingDate">
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <label for="endingingDateId" class="col-sm-2 col-form-label"> Ending Date:</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="" placeholder="EndingDate(obligatoire)" formControlName="endingDate">
+                </div>
+              </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <label class="custom-control-label" for="customRadioInline1">Starting</label>
+                    <input type="radio" id="customRadioInline1" name="starting" class="custom-control-input"formControlName="starting">
+                    <label class="custom-control-label" for="customRadioInline2">done</label>
+                    <input type="radio" id="customRadioInline2" name="done" class="custom-control-input" formControlName="done">
+              </div>
+            <div class="form-group row nb-2">
+                <div class="offset-md-2 col-md-4"> 
+                    <button class="btn btn-info mr-3" type="submit">Save</button>
+                    <button type="button" class="btn btn-outline-secondary mr-3" type="button" routerLink="/Task">Cancel</button>
+                    <button type="button" class="btn btn-outline-danger" type="button">Remove</button>
+
+
+
+                </div>
+
+
+            </div>
+         </form>
+      </div>
+    
+</div>
+<p>tasks:</p>
+
+<div *ngFor = "let task of tasks "> 
+  <p>{{task.ID}}</p>
+  <p>{{task.name}}</p>
+  <p>{{task.done}}</p>
+  <p>{{task.starting}}</p>
+  
+</div>
+<pre>
+</pre>
+<pre>
+    {{taskForm.value |json}}
+
+</pre>
+<router-outlet></router-outlet>
+
+
+
